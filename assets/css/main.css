@@ -53,7 +53,6 @@ button:focus,
 }
 
 select {
-  -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
   color: #081828;
   letter-spacing: normal;
@@ -1978,7 +1977,7 @@ ol {
 .hero-area {
   position: relative;
   padding: 180px 0 120px 0;
-  background: #ff6b81;
+  background: #2c2c2c;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2857,7 +2856,6 @@ ol {
   font-size: 14px;
   background-color: #fff3;
   border-radius: 5px;
-  float: right;
   margin-right: 148px;
 }
 
