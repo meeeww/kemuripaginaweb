@@ -1,3 +1,13 @@
+<?php
+include("config.php");
+$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="1" AND Grupo="1"');
+$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="1" AND Grupo="2"');
+$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="2" AND Grupo="1"');
+$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="2" AND Grupo="2"');
+$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="3" AND Grupo="1"');
+$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="3" AND Grupo="2"');
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -135,83 +145,206 @@
     <!-- End Hero Area -->
 
     <!-- Start Features Area -->
-    <section id="features" class="features section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">Features</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Your Experience Gets Better And Better Over Time.
-                        </h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                        <i class="lni lni-cloud-upload"></i>
-                        <h3>Push to Deploy</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-                        <i class="lni lni-lock"></i>
-                        <h3>SSL Certificates</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-reload"></i>
-                        <h3>Simple Queues</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                        <i class="lni lni-shield"></i>
-                        <h3>Advanced Security</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-                        <i class="lni lni-cog"></i>
-                        <h3>Powerful API</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-layers"></i>
-                        <h3>Database Backups</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-            </div>
-        </div>
-    </section>
+    <br>
+    </br>
+    <br>
+    </br>
+    <span class="seleccionar" style="margin-left: 37%;"> Selecciona una división: </span>
+    <select name="selectorCalendario" id="selectorCalendario" style="width: 200px; height: 40px;" onchange="elegirCalendario()">
+        <option value="1">1Div Grupo 1</option>
+        <option value="2">1Div Grupo 2</option>
+        <option value="3">2Div Grupo 1</option>
+        <option value="4">2Div Grupo 2</option>
+        <option value="5">3Div Grupo 1</option>
+        <option value="6">3Div Grupo 2</option>
+    </select>
+    <br>
+    </br>
+    <!--1Div 1Gr1-->
+    <img src=>
+    <table id="tablacalendario1" style="display:inline; margin-left: 23%; margin-right: auto; width: 500px" class="table table-bordered">
+        <tr>
+            <th scope="row">Jornada</th>
+            <th scope="row">Blueside</th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">Redside</th>
+            <th scope="row">Fecha</th>
+            <th scope="row">Hora</th>
+        </tr>
+
+        <?php
+        while ($res = mysqli_fetch_array($div1gr1)) {
+            echo '<tr>';
+            echo '<td width="100px">' . $res["Jornada"] . '</td>'; //jornada
+            echo '<td width="300px">' . $res["Blueside"] . '</td>'; //blueside
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="40px">' . $res["vs"] . '</td>'; //vs
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="300px">' . $res["Redside"]  . '</td>'; //redside
+            echo '<td width="100px">' . $res["Fecha"]  . '</td>'; //fecha
+            echo '<td width="100px">' . $res["Hora"] . '</td>'; //hora
+            echo '</tr>';
+        }
+        ?>
+        <tr>
+        </tr>
+    </table>
+    <!--1Div 1Gr2-->
+    <table id="tablacalendario2" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+    <tr>
+            <th scope="row">Jornada</th>
+            <th scope="row">Blueside</th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">Redside</th>
+            <th scope="row">Fecha</th>
+            <th scope="row">Hora</th>
+        </tr>
+
+        <?php
+        while ($res = mysqli_fetch_array($div1gr2)) {
+            echo '<tr>';
+            echo '<td width="100px">' . $res["Jornada"] . '</td>'; //jornada
+            echo '<td width="300px">' . $res["Blueside"] . '</td>'; //blueside
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="40px">' . $res["vs"] . '</td>'; //vs
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="300px">' . $res["Redside"]  . '</td>'; //redside
+            echo '<td width="100px">' . $res["Fecha"]  . '</td>'; //fecha
+            echo '<td width="100px">' . $res["Hora"] . '</td>'; //hora
+            echo '</tr>';
+        }
+        ?>
+        <tr>
+        </tr>
+    </table>
+    <!--2Div 1Gr1-->
+    <table id="tablacalendario3" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+    <tr>
+            <th scope="row">Jornada</th>
+            <th scope="row">Blueside</th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">Redside</th>
+            <th scope="row">Fecha</th>
+            <th scope="row">Hora</th>
+        </tr>
+
+        <?php
+        while ($res = mysqli_fetch_array($div2gr1)) {
+            echo '<tr>';
+            echo '<td width="100px">' . $res["Jornada"] . '</td>'; //jornada
+            echo '<td width="300px">' . $res["Blueside"] . '</td>'; //blueside
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="40px">' . $res["vs"] . '</td>'; //vs
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="300px">' . $res["Redside"]  . '</td>'; //redside
+            echo '<td width="100px">' . $res["Fecha"]  . '</td>'; //fecha
+            echo '<td width="100px">' . $res["Hora"] . '</td>'; //hora
+            echo '</tr>';
+        }
+        ?>
+        <tr>
+        </tr>
+    </table>
+    <!--2Div 1Gr2-->
+    <table id="tablacalendario4" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+    <tr>
+            <th scope="row">Jornada</th>
+            <th scope="row">Blueside</th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">Redside</th>
+            <th scope="row">Fecha</th>
+            <th scope="row">Hora</th>
+        </tr>
+
+        <?php
+        while ($res = mysqli_fetch_array($div2gr2)) {
+            echo '<tr>';
+            echo '<td width="100px">' . $res["Jornada"] . '</td>'; //jornada
+            echo '<td width="300px">' . $res["Blueside"] . '</td>'; //blueside
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="40px">' . $res["vs"] . '</td>'; //vs
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="300px">' . $res["Redside"]  . '</td>'; //redside
+            echo '<td width="100px">' . $res["Fecha"]  . '</td>'; //fecha
+            echo '<td width="100px">' . $res["Hora"] . '</td>'; //hora
+            echo '</tr>';
+        }
+        ?>
+        <tr>
+        </tr>
+    </table>
+    <!--3Div 1Gr1-->
+    <table id="tablacalendario5" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+    <tr>
+            <th scope="row">Jornada</th>
+            <th scope="row">Blueside</th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">Redside</th>
+            <th scope="row">Fecha</th>
+            <th scope="row">Hora</th>
+        </tr>
+
+        <?php
+        while ($res = mysqli_fetch_array($div3gr1)) {
+            echo '<tr>';
+            echo '<td width="100px">' . $res["Jornada"] . '</td>'; //jornada
+            echo '<td width="300px">' . $res["Blueside"] . '</td>'; //blueside
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="40px">' . $res["vs"] . '</td>'; //vs
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="300px">' . $res["Redside"]  . '</td>'; //redside
+            echo '<td width="100px">' . $res["Fecha"]  . '</td>'; //fecha
+            echo '<td width="100px">' . $res["Hora"] . '</td>'; //hora
+            echo '</tr>';
+        }
+        ?>
+        <tr>
+        </tr>
+    </table>
+    <!--3Div 1Gr2-->
+    <table id="tablacalendario6" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+    <tr>
+            <th scope="row">Jornada</th>
+            <th scope="row">Blueside</th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">Redside</th>
+            <th scope="row">Fecha</th>
+            <th scope="row">Hora</th>
+        </tr>
+
+        <?php
+        while ($res = mysqli_fetch_array($div3gr2)) {
+            echo '<tr>';
+            echo '<td width="100px">' . $res["Jornada"] . '</td>'; //jornada
+            echo '<td width="300px">' . $res["Blueside"] . '</td>'; //blueside
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="40px">' . $res["vs"] . '</td>'; //vs
+            echo '<td width="40px height="500px"><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="" width="20" height="20" style="vertical-align:top"></td> '; //logo
+            echo '<td width="300px">' . $res["Redside"]  . '</td>'; //redside
+            echo '<td width="100px">' . $res["Fecha"]  . '</td>'; //fecha
+            echo '<td width="100px">' . $res["Hora"] . '</td>'; //hora
+            echo '</tr>';
+        }
+        ?>
+        <tr>
+        </tr>
+    </table>
+    <br>
+    </br>
+    <br>
+    </br>
     <!-- End Features Area -->
 
     <!-- Start Achievement Area -->
