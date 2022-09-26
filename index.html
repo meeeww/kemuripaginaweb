@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/tiny-slider.css" />
     <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="main.css" />
 
 </head>
@@ -60,45 +61,80 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="#home"
-                                            aria-label="Toggle navigation">Inicio</a>
+                                        <a href="http://localhost/nuevotema/" aria-label="Toggle navigation">Inicio</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">Partidos</a>
                                         <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="javascript:void(0)">Calendario</a></li>
-                                            <li class="nav-item"><a href="javascript:void(0)">Resultados</a></li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/calendario">Calendario</a></li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/resultados">Resultados</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="javascript:void(0)" aria-label="Toggle navigation">Clasificación</a>
+                                        <a href="http://localhost/nuevotema/clasificacion"
+                                            aria-label="Toggle navigation">Clasificación</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="http://localhost/kemurileague/"
-                                            aria-label="Toggle navigation">Equipos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="javascript:void(0)" aria-label="Toggle navigation">Jugadores</a>
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Temporada 2023</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-4">
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/equipos">Equipos</a></li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/jugadores">Jugadores</a></li>
+                                        </ul>
                                     </li>
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">Estadísticas</a>
                                         <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="javascript:void(0)">Equipos</a></li>
-                                            <li class="nav-item"><a href="javascript:void(0)">Jugadores</a></li>
-                                            <li class="nav-item"><a href="javascript:void(0)">Temporada</a></li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticasequipos">Equipos</a>
+                                            </li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticasjugadores">Jugadores</a>
+                                            </li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticastemporada">Temporada</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="javascript:void(0)" aria-label="Toggle navigation">Contacto</a>
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Soporte</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-4">
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticasjugadores">Reglamento</a>
+                                            </li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticasjugadores">Formulario
+                                                    de inscripción 2023</a></li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticasequipos">Formulario de
+                                                    cambio de día y hora</a></li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticasjugadores">Formulario
+                                                    de alta de jugadores</a></li>
+                                            <li class="nav-item"><a
+                                                    href="http://localhost/nuevotema/estadisticastemporada">Soporte</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="http://localhost/nuevotema/contacto"
+                                            aria-label="Toggle navigation">Contacto</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
                             <div class="button add-list-button">
-                                <a href="javascript:void(0)" class="btn">Inscríbete</a>
+                                <a href="https://discord.gg/Kzfm8xJamz" class="btn">Inscríbete</a>
                             </div>
                         </nav>
                         <!-- End Navbar -->
@@ -119,7 +155,12 @@
                         <p class="wow fadeInLeft" data-wow-delay=".6s">La Liga que Marca la Diferencia.</p>
                         <div class="button wow fadeInLeft" data-wow-delay=".8s">
                             <a href="javascript:void(0)" class="btn"><i class="lni lni-discord"></i> Discord</a>
-                            <a href="javascript:void(0)" class="btn btn-alt"><i class="lni lni-twitter-original"></i> Twitter</a>
+                            <a href="javascript:void(0)" class="btn btn-alt"><i class="lni lni-twitter-original"></i>
+                                Twitter</a>
+                            <br>
+                            </br>
+                            <a href="javascript:void(0)" class="btn btn-alt"><i class="glyphicon glyphicon-file"></i>
+                                Reglamento</a>
                         </div>
                     </div>
                 </div>
@@ -140,7 +181,7 @@
                 <div class="col-12">
                     <div class="section-title">
                         <h3 class="wow zoomIn" data-wow-delay=".2s">Características</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Vuestra Experiencia Mejorará Con El Tiempo.
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Calidad Ante Todo.
                         </h2>
                     </div>
                 </div>
@@ -149,9 +190,9 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Feature -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                        <i class="lni lni-cloud-upload"></i>
+                        <i class="lni lni-reload"></i>
                         <h3>Estadísticas al Día</h3>
-                        <p>Todas las estadísticas de tanto los jugadores como de los equipos se subirán y actualizarán
+                        <p>Todas las estadísticas, tanto de los equipos como de los jugadores de la temporada, serán actualizadas
                             todos los días.</p>
                     </div>
                     <!-- End Single Feature -->
@@ -159,7 +200,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Feature -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-                        <i class="lni lni-lock"></i>
+                        <i class="glyphicon glyphicon-cog"></i>
                         <h3>Automatización</h3>
                         <p>Después de jugar un partido, recogeremos las estadísticas automáticamente sin
                             necesidad de verificación por parte de los jugadores.</p>
@@ -169,8 +210,8 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Feature -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-reload"></i>
-                        <h3>Administración competente</h3>
+                        <i class="glyphicon glyphicon-screenshot"></i>
+                        <h3>Administración Eficaz</h3>
                         <p>Nuestro equipo de administradores responderán todas vuestras dudas y problemas lo antes
                             posible y de una forma igualitaria.</p>
                     </div>
@@ -179,30 +220,30 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Feature -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                        <i class="lni lni-shield"></i>
-                        <h3>Advanced Security</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <h3>Soporte 24/7h</h3>
+                        <p>Sabemos la importancia que tiene un soporte competente en cualquier tipo de servicio,
+                            por lo que ésta estará siempre a vuestra disposición.</p>
                     </div>
                     <!-- End Single Feature -->
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Feature -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-                        <i class="lni lni-cog"></i>
-                        <h3>Powerful API</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
+                        <i class="glyphicon glyphicon-tasks"></i>
+                        <h3>API Dedicada</h3>
+                        <p>Utilizamos todos los recursos posibles, como la API de Riot, para traer
+                            las mayores facilidades de uso a nuestros usuarios.</p>
                     </div>
                     <!-- End Single Feature -->
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Feature -->
                     <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-layers"></i>
-                        <h3>Database Backups</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page at its layout.</p>
+                        <i class="glyphicon glyphicon-usd"></i>
+                        <h3>Precios Asequibles</h3>
+                        <p>Creemos que la mejor forma para atraer equipos es el valor económico, por lo que
+                            traemos un precio competitivo con premios ajustados.</p>
                     </div>
                     <!-- End Single Feature -->
                 </div>
@@ -217,8 +258,8 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
                     <div class="title">
-                        <h2>Trusted by developers from over 80 planets</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                        <h2>Confiado por equipos de toda España</h2>
+                        <p>¡Únete a nuestra comunidad!</p>
                     </div>
                 </div>
             </div>
@@ -228,19 +269,19 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
                                 <h3 class="counter"><span id="secondo1" class="countup" cup-end="100">100</span>%</h3>
-                                <p>satisfaction</p>
+                                <p>Satisfacción</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
-                                <h3 class="counter"><span id="secondo2" class="countup" cup-end="120">120</span>K</h3>
-                                <p>Happy Users</p>
+                                <h3 class="counter"><span id="secondo2" class="countup" cup-end="5">5</span></h3>
+                                <p>Equipos y Jugadores Contentos</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                                <h3 class="counter"><span id="secondo3" class="countup" cup-end="125">125</span>k+</h3>
-                                <p>Downloads</p>
+                                <h3 class="counter"><span id="secondo3" class="countup" cup-end="0">0</span>+</h3>
+                                <p>Partidas Jugadas</p>
                             </div>
                         </div>
                     </div>
@@ -249,169 +290,6 @@
         </div>
     </section>
     <!-- End Achievement Area -->
-
-    <!-- Start Pricing Table Area -->
-    <section id="pricing" class="pricing-table section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">pricing</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pricing Plan</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".2s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Hobby</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$12<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Hobby</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".4s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Freelancer</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$24<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Freelancer</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".6s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Startup</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$32<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Startup</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".8s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Enterprise</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$48<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Enterprise</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/ End Pricing Table Area -->
-
-    <!-- Start Call To Action Area -->
-    <section class="section call-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                    <div class="cta-content">
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">You are using free Lite <br>Version of Appvilla
-                        </h2>
-                        <p class="wow fadeInUp" data-wow-delay=".4s">Please, purchase full version of the template to
-                            get all pages, features and commercial license.</p>
-                        <div class="button wow fadeInUp" data-wow-delay=".6s">
-                            <a href="javascript:void(0)" class="btn">Purchase Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Call To Action Area -->
 
     <!-- Start Footer Area -->
     <footer class="footer">
@@ -427,7 +305,7 @@
                                     <img src="assets/images/logo/white-logo.svg" alt="#">
                                 </a>
                             </div>
-                            <p>Making the world a better place through constructing elegant hierarchies.</p>
+                            <p>Mejorándonos día a día.</p>
                             <ul class="social">
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
@@ -436,8 +314,8 @@
                                 <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-discord"></i></a></li>
                             </ul>
-                            <p class="copyright-text">Designed and Developed by <a href="https://uideck.com/"
-                                    rel="nofollow" target="_blank">UIdeck</a>
+                            <p class="copyright-text">Copyright© 2023 <a href="http://localhost/nuevotema/"
+                                    rel="nofollow" target="_blank"> Kemuri Games League</a>
                             </p>
                         </div>
                         <!-- End Single Widget -->
@@ -447,13 +325,13 @@
                             <div class="col-lg-3 col-md-6 col-12">
                                 <!-- Single Widget -->
                                 <div class="single-footer f-link">
-                                    <h3>Solutions</h3>
+                                    <h3>Temporada</h3>
                                     <ul>
-                                        <li><a href="javascript:void(0)">Marketing</a></li>
-                                        <li><a href="javascript:void(0)">Analytics</a></li>
-                                        <li><a href="javascript:void(0)">Commerce</a></li>
-                                        <li><a href="javascript:void(0)">Insights</a></li>
-                                        <li><a href="javascript:void(0)">Promotion</a></li>
+                                        <li><a href="javascript:void(0)">Calendario</a></li>
+                                        <li><a href="javascript:void(0)">Resultados</a></li>
+                                        <li><a href="javascript:void(0)">Clasificación</a></li>
+                                        <li><a href="javascript:void(0)">Equipos</a></li>
+                                        <li><a href="javascript:void(0)">Jugadores</a></li>
                                     </ul>
                                 </div>
                                 <!-- End Single Widget -->
@@ -461,13 +339,10 @@
                             <div class="col-lg-3 col-md-6 col-12">
                                 <!-- Single Widget -->
                                 <div class="single-footer f-link">
-                                    <h3>Support</h3>
+                                    <h3>Soporte</h3>
                                     <ul>
-                                        <li><a href="javascript:void(0)">Pricing</a></li>
-                                        <li><a href="javascript:void(0)">Documentation</a></li>
-                                        <li><a href="javascript:void(0)">Guides</a></li>
-                                        <li><a href="javascript:void(0)">API Status</a></li>
-                                        <li><a href="javascript:void(0)">Live Support</a></li>
+                                        <li><a href="http://localhost/nuevotema/reglamento">Reglamento</a></li>
+                                        <li><a href="https://discord.gg/ZQBhnpawdY">Soporte</a></li>
                                     </ul>
                                 </div>
                                 <!-- End Single Widget -->
@@ -475,13 +350,12 @@
                             <div class="col-lg-3 col-md-6 col-12">
                                 <!-- Single Widget -->
                                 <div class="single-footer f-link">
-                                    <h3>Company</h3>
+                                    <h3>KGL</h3>
                                     <ul>
-                                        <li><a href="javascript:void(0)">About Us</a></li>
-                                        <li><a href="javascript:void(0)">Our Blog</a></li>
-                                        <li><a href="javascript:void(0)">Jobs</a></li>
-                                        <li><a href="javascript:void(0)">Press</a></li>
-                                        <li><a href="javascript:void(0)">Contact Us</a></li>
+                                        <li><a href="http://localhost/nuevotema/sobrenosotros">Sobre Nosotros</a></li>
+                                        <li><a href="http://localhost/nuevotema/trabajaconnosotros">Trabaja con
+                                                Nosotros</a></li>
+                                        <li><a href="http://localhost/nuevotema/contacto">Contáctanos</a></li>
                                     </ul>
                                 </div>
                                 <!-- End Single Widget -->
@@ -491,11 +365,10 @@
                                 <div class="single-footer f-link">
                                     <h3>Legal</h3>
                                     <ul>
-                                        <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                                        <li><a href="javascript:void(0)">Catering Services</a></li>
-                                        <li><a href="javascript:void(0)">Customer Relations</a></li>
-                                        <li><a href="javascript:void(0)">Innovation</a></li>
+                                        <li><a href="http://localhost/nuevotema/terminosycondiciones">Terms &
+                                                Conditions</a></li>
+                                        <li><a href="http://localhost/nuevotema/politicadeprivacidad">Privacy Policy</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- End Single Widget -->
