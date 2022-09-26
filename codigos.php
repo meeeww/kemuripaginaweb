@@ -26,6 +26,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
     <link rel="stylesheet" href="assets/css/tiny-slider.css" />
     <link rel="stylesheet" href="assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
 
 </head>
 

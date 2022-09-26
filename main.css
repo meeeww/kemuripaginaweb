@@ -2949,3 +2949,12 @@ ol {
   color: #ff3816;
   background-color: #fff;
 }
+
+#selector{
+  border-radius: 50px;
+  border: none;
+}
+
+#tablaclasificacion1 td{
+  padding: 5px;
+}
