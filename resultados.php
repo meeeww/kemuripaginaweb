@@ -189,7 +189,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                     <center>Hora</center>
                 </th>
             </tr>
-
+<!---hay que terminar como se vera la tabla--->
             <?php
             while ($res = mysqli_fetch_array($div1gr1)) {
                 echo '<tr>';
