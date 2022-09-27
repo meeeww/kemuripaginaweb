@@ -1,11 +1,11 @@
 <?php
 include("config.php");
-$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="1" AND Grupo="1"');
-$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="1" AND Grupo="2"');
-$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="2" AND Grupo="1"');
-$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="2" AND Grupo="2"');
-$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="3" AND Grupo="1"');
-$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="3" AND Grupo="2"');
+$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="1" AND Grupo="1"');
+$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="1" AND Grupo="2"');
+$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="2" AND Grupo="1"');
+$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="2" AND Grupo="2"');
+$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AND Grupo="1"');
+$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AND Grupo="2"');
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +143,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="3" AND
     <br>
     </br>
     <span class="seleccionar" style="margin-left: 40%; font-weight: bold;"> Selecciona una división: </span>
-    <select name="selector" id="selector" style="width:10%; height: 40%;" onchange="elegirClasificacion()">
+    <select name="selector" id="selector" style="width:10%; height: 40%;" onchange="elegirResultado()">
         <optgroup label="Primera División">
             <option value="1">Grupo 1</option>
             <option value="2">Grupo 2</option>
@@ -164,18 +164,29 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="3" AND
         <img src=>
         <table id="tablaclasificacion1" style="display:inline;">
             <tr>
-                <th scope="row"></th>
                 <th scope="row">
-                    <center>Nombre</center>
+                    <center>Blueside</center>
                 </th>
                 <th scope="row">
-                    <center>Posición</center>
+                    <center></center>
                 </th>
                 <th scope="row">
-                    <center>Victorias</center>
+                    <center></center>
                 </th>
                 <th scope="row">
-                    <center>Derrotas</center>
+                    <center></center>
+                </th>
+                <th scope="row">
+                    <center></center>
+                </th>
+                <th scope="row">
+                    <center>Redside</center>
+                </th>
+                <th scope="row">
+                    <center>Fecha</center>
+                </th>
+                <th scope="row">
+                    <center>Hora</center>
                 </th>
             </tr>
 
