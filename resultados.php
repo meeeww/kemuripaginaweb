@@ -1,11 +1,11 @@
 <?php
 include("config.php");
-$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="1" AND Grupo="1"');
-$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="1" AND Grupo="2"');
-$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="2" AND Grupo="1"');
-$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="2" AND Grupo="2"');
-$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND Grupo="1"');
-$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND Grupo="2"');
+$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="1" AND Grupo="1"');
+$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="1" AND Grupo="2"');
+$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="2" AND Grupo="1"');
+$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="2" AND Grupo="2"');
+$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="3" AND Grupo="1"');
+$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="3" AND Grupo="2"');
 ?>
 
 <!DOCTYPE html>
@@ -151,7 +151,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
     <br>
     </br>
     <span class="seleccionar" style="margin-left: 40%; font-weight: bold;"> Selecciona una división: </span>
-    <select name="selector" id="selector" style="width:10%; height: 40%;" onchange="elegirCodigos()">
+    <select name="selector" id="selector" style="width:10%; height: 40%;" onchange="elegirClasificacion()">
         <optgroup label="Primera División">
             <option value="1">Grupo 1</option>
             <option value="2">Grupo 2</option>
@@ -170,34 +170,20 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
     <!--1Div 1Gr1-->
     <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
         <img src=>
-        <table id="tablacodigos1" style="display:inline;">
+        <table id="tablaclasificacion1" style="display:inline;">
             <tr>
+                <th scope="row"></th>
                 <th scope="row">
-                    <center>Jornada</center>
+                    <center>Nombre</center>
                 </th>
                 <th scope="row">
-                    <center>Blueside</center>
+                    <center>Posición</center>
                 </th>
                 <th scope="row">
-                    <center></center>
+                    <center>Victorias</center>
                 </th>
                 <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center>Redside</center>
-                </th>
-                <th scope="row">
-                    <center>Fecha</center>
-                </th>
-                <th scope="row">
-                    <center>Hora</center>
-                </th>
-                <th scope="row">
-                    <center>Código</center>
+                    <center>Derrotas</center>
                 </th>
             </tr>
 
@@ -206,13 +192,12 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
             echo '<tr>';
             echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["CodigoT"] . '</td>'; //codigo
             echo '</tr>';
         }
         ?>
@@ -223,34 +208,20 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
     <!--1Div 1Gr2-->
     <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
         <img src=>
-        <table id="tablacodigos2" style="display:inline;">
+        <table id="tablaclasificacion2" style="display:none;">
             <tr>
+                <th scope="row"></th>
                 <th scope="row">
-                    <center>Jornada</center>
+                    <center>Nombre</center>
                 </th>
                 <th scope="row">
-                    <center>Blueside</center>
+                    <center>Posición</center>
                 </th>
                 <th scope="row">
-                    <center></center>
+                    <center>Victorias</center>
                 </th>
                 <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center>Redside</center>
-                </th>
-                <th scope="row">
-                    <center>Fecha</center>
-                </th>
-                <th scope="row">
-                    <center>Hora</center>
-                </th>
-                <th scope="row">
-                    <center>Código</center>
+                    <center>Derrotas</center>
                 </th>
             </tr>
 
@@ -259,13 +230,12 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
             echo '<tr>';
             echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["CodigoT"] . '</td>'; //codigo
             echo '</tr>';
         }
         ?>
@@ -273,37 +243,23 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
         </tr>
     </table>
     </div>
-    <!--2Div 1Gr1-->
+    <!--1Div 1Gr1-->
     <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
         <img src=>
-        <table id="tablacodigos3" style="display:inline;">
+        <table id="tablaclasificacion3" style="display:none;">
             <tr>
+                <th scope="row"></th>
                 <th scope="row">
-                    <center>Jornada</center>
+                    <center>Nombre</center>
                 </th>
                 <th scope="row">
-                    <center>Blueside</center>
+                    <center>Posición</center>
                 </th>
                 <th scope="row">
-                    <center></center>
+                    <center>Victorias</center>
                 </th>
                 <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center>Redside</center>
-                </th>
-                <th scope="row">
-                    <center>Fecha</center>
-                </th>
-                <th scope="row">
-                    <center>Hora</center>
-                </th>
-                <th scope="row">
-                    <center>Código</center>
+                    <center>Derrotas</center>
                 </th>
             </tr>
 
@@ -312,13 +268,12 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
             echo '<tr>';
             echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["CodigoT"] . '</td>'; //codigo
             echo '</tr>';
         }
         ?>
@@ -329,34 +284,20 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
     <!--2Div 1Gr2-->
     <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
         <img src=>
-        <table id="tablacodigos4" style="display:inline;">
+        <table id="tablaclasificacion4" style="display:none;">
             <tr>
+                <th scope="row"></th>
                 <th scope="row">
-                    <center>Jornada</center>
+                    <center>Nombre</center>
                 </th>
                 <th scope="row">
-                    <center>Blueside</center>
+                    <center>Posición</center>
                 </th>
                 <th scope="row">
-                    <center></center>
+                    <center>Victorias</center>
                 </th>
                 <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center>Redside</center>
-                </th>
-                <th scope="row">
-                    <center>Fecha</center>
-                </th>
-                <th scope="row">
-                    <center>Hora</center>
-                </th>
-                <th scope="row">
-                    <center>Código</center>
+                    <center>Derrotas</center>
                 </th>
             </tr>
 
@@ -365,13 +306,12 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
             echo '<tr>';
             echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["CodigoT"] . '</td>'; //codigo
             echo '</tr>';
         }
         ?>
@@ -382,34 +322,20 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
     <!--3Div 1Gr1-->
     <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
         <img src=>
-        <table id="tablacodigos5" style="display:inline;">
+        <table id="tablaclasificacion5" style="display:none;">
             <tr>
+                <th scope="row"></th>
                 <th scope="row">
-                    <center>Jornada</center>
+                    <center>Nombre</center>
                 </th>
                 <th scope="row">
-                    <center>Blueside</center>
+                    <center>Posición</center>
                 </th>
                 <th scope="row">
-                    <center></center>
+                    <center>Victorias</center>
                 </th>
                 <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center>Redside</center>
-                </th>
-                <th scope="row">
-                    <center>Fecha</center>
-                </th>
-                <th scope="row">
-                    <center>Hora</center>
-                </th>
-                <th scope="row">
-                    <center>Código</center>
+                    <center>Derrotas</center>
                 </th>
             </tr>
 
@@ -418,13 +344,12 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
             echo '<tr>';
             echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["CodigoT"] . '</td>'; //codigo
             echo '</tr>';
         }
         ?>
@@ -435,34 +360,20 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
     <!--3Div 1Gr2-->
     <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
         <img src=>
-        <table id="tablacodigos6" style="display:inline;">
+        <table id="tablaclasificacion6" style="display:none;">
             <tr>
+                <th scope="row"></th>
                 <th scope="row">
-                    <center>Jornada</center>
+                    <center>Nombre</center>
                 </th>
                 <th scope="row">
-                    <center>Blueside</center>
+                    <center>Posición</center>
                 </th>
                 <th scope="row">
-                    <center></center>
+                    <center>Victorias</center>
                 </th>
                 <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center></center>
-                </th>
-                <th scope="row">
-                    <center>Redside</center>
-                </th>
-                <th scope="row">
-                    <center>Fecha</center>
-                </th>
-                <th scope="row">
-                    <center>Hora</center>
-                </th>
-                <th scope="row">
-                    <center>Código</center>
+                    <center>Derrotas</center>
                 </th>
             </tr>
 
@@ -471,13 +382,12 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
             echo '<tr>';
             echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
             echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
             echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["CodigoT"] . '</td>'; //codigo
             echo '</tr>';
         }
         ?>
@@ -485,6 +395,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Codigos` WHERE Division="3" AND
         </tr>
     </table>
     </div>
+    
     <br>
     </br>
     <br>

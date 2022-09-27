@@ -94,12 +94,65 @@ function elegirCalendario() {
             document.getElementById("tablacalendario6").style.display = "none";
             break;
         case "6":
-            document.getElementById("tabla1").style.display = "none";
-            document.getElementById("tabla2").style.display = "none";
-            document.getElementById("tabla3").style.display = "none";
-            document.getElementById("tabla4").style.display = "none";
-            document.getElementById("tabla5").style.display = "none";
-            document.getElementById("tabla6").style.display = "inline";
+            document.getElementById("tablacalendario1").style.display = "none";
+            document.getElementById("tablacalendario2").style.display = "none";
+            document.getElementById("tablacalendario3").style.display = "none";
+            document.getElementById("tablacalendario4").style.display = "none";
+            document.getElementById("tablacalendario5").style.display = "none";
+            document.getElementById("tablacalendario6").style.display = "inline";
+            break;
+    }
+}
+
+function elegirCodigos() {
+    switch (document.getElementById("selectorCalendario").value) {
+        case "1":
+            document.getElementById("tablacodigos1").style.display = "inline";
+            document.getElementById("tablacodigos2").style.display = "none";
+            document.getElementById("tablacodigos3").style.display = "none";
+            document.getElementById("tablacodigos4").style.display = "none";
+            document.getElementById("tablacodigos5").style.display = "none";
+            document.getElementById("tablacodigos6").style.display = "none";
+            break;
+        case "2":
+            document.getElementById("tablacodigos1").style.display = "none";
+            document.getElementById("tablacodigos2").style.display = "inline";
+            document.getElementById("tablacodigos3").style.display = "none";
+            document.getElementById("tablacodigos4").style.display = "none";
+            document.getElementById("tablacodigos5").style.display = "none";
+            document.getElementById("tablacodigos6").style.display = "none";
+            break;
+        case "3":
+            document.getElementById("tablacodigos1").style.display = "none";
+            document.getElementById("tablacodigos2").style.display = "none";
+            document.getElementById("tablacodigos3").style.display = "inline";
+            document.getElementById("tablacodigos4").style.display = "none";
+            document.getElementById("tablacodigos5").style.display = "none";
+            document.getElementById("tablacodigos6").style.display = "none";
+            break;
+        case "4":
+            document.getElementById("tablacodigos1").style.display = "none";
+            document.getElementById("tablacodigos2").style.display = "none";
+            document.getElementById("tablacodigos3").style.display = "none";
+            document.getElementById("tablacodigos4").style.display = "inline";
+            document.getElementById("tablacodigos5").style.display = "none";
+            document.getElementById("tablacodigos6").style.display = "none";
+            break;
+        case "5":
+            document.getElementById("tablacodigos1").style.display = "none";
+            document.getElementById("tablacodigos2").style.display = "none";
+            document.getElementById("tablacodigos3").style.display = "none";
+            document.getElementById("tablacodigos4").style.display = "none";
+            document.getElementById("tablacodigos5").style.display = "inline";
+            document.getElementById("tablacodigos6").style.display = "none";
+            break;
+        case "6":
+            document.getElementById("tablacodigos1").style.display = "none";
+            document.getElementById("tablacodigos2").style.display = "none";
+            document.getElementById("tablacodigos3").style.display = "none";
+            document.getElementById("tablacodigos4").style.display = "none";
+            document.getElementById("tablacodigos5").style.display = "none";
+            document.getElementById("tablacodigos6").style.display = "inline";
             break;
     }
 }
