@@ -1,11 +1,11 @@
 <?php
 include("config.php");
-$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="1" AND Grupo="1"');
-$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="1" AND Grupo="2"');
-$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="2" AND Grupo="1"');
-$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="2" AND Grupo="2"');
-$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AND Grupo="1"');
-$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AND Grupo="2"');
+$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="1" AND Grupo="1"');
+$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="1" AND Grupo="2"');
+$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="2" AND Grupo="1"');
+$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="2" AND Grupo="2"');
+$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="3" AND Grupo="1"');
+$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Equipos` WHERE Division="3" AND Grupo="2"');
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>KGL - Kemuri Games League.</title>
+    <title>KGL - Kemuri Games League</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
@@ -61,9 +61,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                             <a class="navbar-brand" href="index.html">
                                 <img src="assets/images/logo/white-logo.svg" alt="Logo">
                             </a>
-                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
@@ -71,13 +69,10 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="#home"
-                                            aria-label="Toggle navigation">Inicio</a>
+                                        <a href="#home" aria-label="Toggle navigation">Inicio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
-                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Partidos</a>
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Partidos</a>
                                         <ul class="sub-menu collapse" id="submenu-1-4">
                                             <li class="nav-item"><a href="javascript:void(0)">Calendario</a></li>
                                             <li class="nav-item"><a href="javascript:void(0)">Resultados</a></li>
@@ -87,16 +82,13 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                                         <a href="javascript:void(0)" aria-label="Toggle navigation">Clasificación</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="http://localhost/kemurileague/"
-                                            aria-label="Toggle navigation">Equipos</a>
+                                        <a href="http://localhost/kemurileague/" aria-label="Toggle navigation">Equipos</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="javascript:void(0)" aria-label="Toggle navigation">Jugadores</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
-                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Estadísticas</a>
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Estadísticas</a>
                                         <ul class="sub-menu collapse" id="submenu-1-4">
                                             <li class="nav-item"><a href="javascript:void(0)">Equipos</a></li>
                                             <li class="nav-item"><a href="javascript:void(0)">Jugadores</a></li>
@@ -187,28 +179,22 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                 </th>
             </tr>
 
-        <?php
-        while ($res = mysqli_fetch_array($div1gr1)) {
-            echo '<tr>';
-            echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '</tr>';
-        }
-        ?>
-        <tr>
-        </tr>
-    </table>
-    </div>
-    <!--1Div 1Gr2-->
-    <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
-        <img src=>
-        <table id="tablaclasificacion2" style="display:none;">
+            <?php
+            while ($res = mysqli_fetch_array($div1gr1)) {
+                echo '<tr>';
+                echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["Logo"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+                echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Nombre"] . '</center></td>'; //nombre
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Posicion"]  . '</center></td>'; //posicion
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Victorias"]  . '</center></td>'; //victorias
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Derrotas"]  . '</center></td>'; //derrotas
+                echo '</tr>';
+            }
+            ?>
+            <tr>
+            </tr>
+        </table>
+        <!--1Div 1Gr2-->
+        <table id="tablaclasificacion2" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -225,28 +211,22 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                 </th>
             </tr>
 
-        <?php
-        while ($res = mysqli_fetch_array($div1gr1)) {
-            echo '<tr>';
-            echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '</tr>';
-        }
-        ?>
-        <tr>
-        </tr>
-    </table>
-    </div>
-    <!--1Div 1Gr1-->
-    <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
-        <img src=>
-        <table id="tablaclasificacion3" style="display:none;">
+            <?php
+            while ($res = mysqli_fetch_array($div1gr2)) {
+                echo '<tr>';
+                echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["Logo"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+                echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Nombre"] . '</center></td>'; //nombre
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Posicion"]  . '</center></td>'; //posicion
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Victorias"]  . '</center></td>'; //victorias
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Derrotas"]  . '</center></td>'; //derrotas
+                echo '</tr>';
+            }
+            ?>
+            <tr>
+            </tr>
+        </table>
+        <!--2Div 1Gr1-->
+        <table id="tablaclasificacion3" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -263,28 +243,22 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                 </th>
             </tr>
 
-        <?php
-        while ($res = mysqli_fetch_array($div1gr1)) {
-            echo '<tr>';
-            echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '</tr>';
-        }
-        ?>
-        <tr>
-        </tr>
-    </table>
-    </div>
-    <!--2Div 1Gr2-->
-    <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
-        <img src=>
-        <table id="tablaclasificacion4" style="display:none;">
+            <?php
+            while ($res = mysqli_fetch_array($div2gr1)) {
+                echo '<tr>';
+                echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["Logo"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+                echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Nombre"] . '</center></td>'; //nombre
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Posicion"]  . '</center></td>'; //posicion
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Victorias"]  . '</center></td>'; //victorias
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Derrotas"]  . '</center></td>'; //derrotas
+                echo '</tr>';
+            }
+            ?>
+            <tr>
+            </tr>
+        </table>
+        <!--2Div 1Gr2-->
+        <table id="tablaclasificacion4" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -301,28 +275,22 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                 </th>
             </tr>
 
-        <?php
-        while ($res = mysqli_fetch_array($div1gr1)) {
-            echo '<tr>';
-            echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '</tr>';
-        }
-        ?>
-        <tr>
-        </tr>
-    </table>
-    </div>
-    <!--3Div 1Gr1-->
-    <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
-        <img src=>
-        <table id="tablaclasificacion5" style="display:none;">
+            <?php
+            while ($res = mysqli_fetch_array($div2gr2)) {
+                echo '<tr>';
+                echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["Logo"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+                echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Nombre"] . '</center></td>'; //nombre
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Posicion"]  . '</center></td>'; //posicion
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Victorias"]  . '</center></td>'; //victorias
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Derrotas"]  . '</center></td>'; //derrotas
+                echo '</tr>';
+            }
+            ?>
+            <tr>
+            </tr>
+        </table>
+        <!--3Div 1Gr1-->
+        <table id="tablaclasificacion5" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -339,28 +307,22 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                 </th>
             </tr>
 
-        <?php
-        while ($res = mysqli_fetch_array($div1gr1)) {
-            echo '<tr>';
-            echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '</tr>';
-        }
-        ?>
-        <tr>
-        </tr>
-    </table>
-    </div>
-    <!--3Div 1Gr2-->
-    <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
-        <img src=>
-        <table id="tablaclasificacion6" style="display:none;">
+            <?php
+            while ($res = mysqli_fetch_array($div3gr1)) {
+                echo '<tr>';
+                echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["Logo"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+                echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Nombre"] . '</center></td>'; //nombre
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Posicion"]  . '</center></td>'; //posicion
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Victorias"]  . '</center></td>'; //victorias
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Derrotas"]  . '</center></td>'; //derrotas
+                echo '</tr>';
+            }
+            ?>
+            <tr>
+            </tr>
+        </table>
+        <!--3Div 1Gr2-->
+        <table id="tablaclasificacion6" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -377,232 +339,27 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                 </th>
             </tr>
 
-        <?php
-        while ($res = mysqli_fetch_array($div1gr1)) {
-            echo '<tr>';
-            echo '<td width="4%" size="50%" style="vertical-align:middle"><center>' . $res["Jornada"] . '</td>'; //jornada
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Blueside"] . '</td>'; //blueside
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoBlue"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["vs"] . '</center></td>'; //vs
-            echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["LogoRed"] . '" alt="alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
-            echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Redside"]  . '</td>'; //redside
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Fecha"]  . '</td>'; //fecha
-            echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Hora"] . '</td>'; //hora
-            echo '</tr>';
-        }
-        ?>
-        <tr>
-        </tr>
-    </table>
+            <?php
+            while ($res = mysqli_fetch_array($div3gr2)) {
+                echo '<tr>';
+                echo '<td width="2.5%"><center><img src="https://drive.google.com/uc?export=view&id=' . $res["Logo"] . '" alt="Logo" width="50%" height="50%" style="vertical-align:top"></center></td> '; //logo
+                echo '<td width="10%" size="50%" style="vertical-align:middle"><center>' . $res["Nombre"] . '</center></td>'; //nombre
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Posicion"]  . '</center></td>'; //posicion
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Victorias"]  . '</center></td>'; //victorias
+                echo '<td width="2.5%" size="50%" style="vertical-align:middle"><center>' . $res["Derrotas"]  . '</center></td>'; //derrotas
+                echo '</tr>';
+            }
+            ?>
+            <tr>
+            </tr>
+        </table>
+        <br>
+        </br>
+        <br>
+        </br>
     </div>
-    
-    <br>
-    </br>
-    <br>
-    </br>
     <!-- End Features Area -->
 
-    <!-- Start Achievement Area -->
-    <section class="our-achievement section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                    <div class="title">
-                        <h2>Trusted by developers from over 80 planets</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
-                                <h3 class="counter"><span id="secondo1" class="countup" cup-end="100">100</span>%</h3>
-                                <p>satisfaction</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
-                                <h3 class="counter"><span id="secondo2" class="countup" cup-end="120">120</span>K</h3>
-                                <p>Happy Users</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                                <h3 class="counter"><span id="secondo3" class="countup" cup-end="125">125</span>k+</h3>
-                                <p>Downloads</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Achievement Area -->
-
-    <!-- Start Pricing Table Area -->
-    <section id="pricing" class="pricing-table section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">pricing</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pricing Plan</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".2s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Hobby</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$12<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Hobby</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".4s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Freelancer</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$24<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Freelancer</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".6s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Startup</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$32<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Startup</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Single Table -->
-                    <div class="single-table wow fadeInUp" data-wow-delay=".8s">
-                        <!-- Table Head -->
-                        <div class="table-head">
-                            <h4 class="title">Enterprise</h4>
-                            <p>All the basics for starting a new business</p>
-                            <div class="price">
-                                <h2 class="amount">$48<span class="duration">/mo</span></h2>
-                            </div>
-                            <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Enterprise</a>
-                            </div>
-                        </div>
-                        <!-- End Table Head -->
-                        <!-- Start Table Content -->
-                        <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
-                            <!-- Table List -->
-                            <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
-                            </ul>
-                            <!-- End Table List -->
-                        </div>
-                        <!-- End Table Content -->
-                    </div>
-                    <!-- End Single Table-->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/ End Pricing Table Area -->
-
-    <!-- Start Call To Action Area -->
-    <section class="section call-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                    <div class="cta-content">
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">You are using free Lite <br>Version of Appvilla
-                        </h2>
-                        <p class="wow fadeInUp" data-wow-delay=".4s">Please, purchase full version of the template to
-                            get all pages, features and commercial license.</p>
-                        <div class="button wow fadeInUp" data-wow-delay=".6s">
-                            <a href="javascript:void(0)" class="btn">Purchase Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Call To Action Area -->
 
     <!-- Start Footer Area -->
     <footer class="footer">
@@ -627,8 +384,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
                                 <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-discord"></i></a></li>
                             </ul>
-                            <p class="copyright-text">Designed and Developed by <a href="https://uideck.com/"
-                                    rel="nofollow" target="_blank">UIdeck</a>
+                            <p class="copyright-text">Designed and Developed by <a href="https://uideck.com/" rel="nofollow" target="_blank">UIdeck</a>
                             </p>
                         </div>
                         <!-- End Single Widget -->
@@ -713,7 +469,6 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script type="text/javascript">
-
         //====== counter up 
         var cu = new counterUp({
             start: 0,
