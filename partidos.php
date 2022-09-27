@@ -1,11 +1,11 @@
 <?php
 include("config.php");
-$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="1" AND Grupo="1"');
-$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="1" AND Grupo="2"');
-$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="2" AND Grupo="1"');
-$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="2" AND Grupo="2"');
-$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="3" AND Grupo="1"');
-$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Eventos` WHERE Division="3" AND Grupo="2"');
+$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="1" AND Grupo="1"');
+$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="1" AND Grupo="2"');
+$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="2" AND Grupo="1"');
+$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="2" AND Grupo="2"');
+$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AND Grupo="1"');
+$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AND Grupo="2"');
 ?>
 
 <!DOCTYPE html>
