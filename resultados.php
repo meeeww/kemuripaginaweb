@@ -162,7 +162,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
     <!--1Div 1Gr1-->
     <div class="cajaTablas" style="padding-right:20%; padding-left:20%">
         <img src=>
-        <table id="tablaclasificacion1" style="display:inline;">
+        <table id="tablaresultados1" style="display:inline;">
             <tr>
                 <th scope="row">
                     <center>Blueside</center>
@@ -205,7 +205,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
             </tr>
         </table>
         <!--1Div 1Gr2-->
-        <table id="tablaclasificacion2" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+        <table id="tablaresultados2" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -237,7 +237,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
             </tr>
         </table>
         <!--2Div 1Gr1-->
-        <table id="tablaclasificacion3" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+        <table id="tablaresultados3" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -269,7 +269,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
             </tr>
         </table>
         <!--2Div 1Gr2-->
-        <table id="tablaclasificacion4" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+        <table id="tablaresultados4" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -301,7 +301,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
             </tr>
         </table>
         <!--3Div 1Gr1-->
-        <table id="tablaclasificacion5" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+        <table id="tablaresultados5" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
@@ -333,7 +333,7 @@ $div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Partidas` WHERE Division="3" AN
             </tr>
         </table>
         <!--3Div 1Gr2-->
-        <table id="tablaclasificacion6" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
+        <table id="tablaresultados6" style="display: none; margin-left: 15%; margin-right: auto; width: 500px" class="table table-bordered">
             <tr>
                 <th scope="row"></th>
                 <th scope="row">
