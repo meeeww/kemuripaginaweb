@@ -1,11 +1,11 @@
 <?php
 include("config.php");
-$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="1" AND Grupo="1"');
-$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="1" AND Grupo="2"');
-$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="2" AND Grupo="1"');
-$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="2" AND Grupo="2"');
-$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="3" AND Grupo="1"');
-$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="3" AND Grupo="2"');
+$div1gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="1" AND Grupo="1" ORDER BY str_to_date(Fecha,'%d/%m/%Y') ASC');
+$div1gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="1" AND Grupo="2" ORDER BY str_to_date(Fecha,'%d/%m/%Y') ASC');
+$div2gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="2" AND Grupo="1" ORDER BY str_to_date(Fecha,'%d/%m/%Y') ASC');
+$div2gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="2" AND Grupo="2" ORDER BY str_to_date(Fecha,'%d/%m/%Y') ASC');
+$div3gr1 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="3" AND Grupo="1" ORDER BY str_to_date(Fecha,'%d/%m/%Y') ASC');
+$div3gr2 = mysqli_query($mysqli, 'SELECT * FROM `Calendario` WHERE Division="3" AND Grupo="2" ORDER BY str_to_date(Fecha,'%d/%m/%Y') ASC');
 ?>
 
 <!DOCTYPE html>
