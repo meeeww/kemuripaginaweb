@@ -156,3 +156,56 @@ function elegirCodigos() {
             break;
     }
 }
+
+function elegirResultados() {
+    switch (document.getElementById("selectorCalendario").value) {
+        case "1":
+            document.getElementById("tablaresultados1").style.display = "inline";
+            document.getElementById("tablaresultados2").style.display = "none";
+            document.getElementById("tablaresultados3").style.display = "none";
+            document.getElementById("tablaresultados4").style.display = "none";
+            document.getElementById("tablaresultados5").style.display = "none";
+            document.getElementById("tablaresultados6").style.display = "none";
+            break;
+        case "2":
+            document.getElementById("tablaresultados1").style.display = "none";
+            document.getElementById("tablaresultados2").style.display = "inline";
+            document.getElementById("tablaresultados3").style.display = "none";
+            document.getElementById("tablaresultados4").style.display = "none";
+            document.getElementById("tablaresultados5").style.display = "none";
+            document.getElementById("tablaresultados6").style.display = "none";
+            break;
+        case "3":
+            document.getElementById("tablaresultados1").style.display = "none";
+            document.getElementById("tablaresultados2").style.display = "none";
+            document.getElementById("tablaresultados3").style.display = "inline";
+            document.getElementById("tablaresultados4").style.display = "none";
+            document.getElementById("tablaresultados5").style.display = "none";
+            document.getElementById("tablaresultados6").style.display = "none";
+            break;
+        case "4":
+            document.getElementById("tablaresultados1").style.display = "none";
+            document.getElementById("tablaresultados2").style.display = "none";
+            document.getElementById("tablaresultados3").style.display = "none";
+            document.getElementById("tablaresultados4").style.display = "inline";
+            document.getElementById("tablaresultados5").style.display = "none";
+            document.getElementById("tablaresultados6").style.display = "none";
+            break;
+        case "5":
+            document.getElementById("tablaresultados1").style.display = "none";
+            document.getElementById("tablaresultados2").style.display = "none";
+            document.getElementById("tablaresultados3").style.display = "none";
+            document.getElementById("tablaresultados4").style.display = "none";
+            document.getElementById("tablaresultados5").style.display = "inline";
+            document.getElementById("tablaresultados6").style.display = "none";
+            break;
+        case "6":
+            document.getElementById("tablaresultados1").style.display = "none";
+            document.getElementById("tablaresultados2").style.display = "none";
+            document.getElementById("tablaresultados3").style.display = "none";
+            document.getElementById("tablaresultados4").style.display = "none";
+            document.getElementById("tablaresultados5").style.display = "none";
+            document.getElementById("tablaresultados6").style.display = "inline";
+            break;
+    }
+}
